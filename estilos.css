@@ -1,0 +1,147 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	min-height: 100vh;
+	padding: 8%;
+	align-items: center;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+
+	/*Flexbox*/
+	/*display: flex; /*los elementos uno al lado del otro
+    gap: 20px; /*separa los div con 20px de espacio*/
+
+	/*Grid*/
+	display: grid;
+	grid-template-columns: 3fr 1fr; /*divide las imagenes en 3 fraciones */
+	gap: 20px;
+	
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+	/*Flexbox*/
+	/*width: 70%; /*ancho de iamgen
+	display: flex; /*uno de lado del otro
+	flex-wrap: wrap; /*acomoda las imagenes dependiendo del ancho
+	gap: 20px;*/
+
+	/*Grid*/
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /*funcion de repeat= tres columnas con 1fraccion de tamaño*/
+	gap: 20px; /*espaciado entre los elementos*/
+}
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	
+	/*Flexbox*/
+	/*width: calc(33.33% - 20px);*/
+
+
+	
+}
+
+.card .textos {
+	height: 100%; /*la aja debe tener el 100% para que funcione la alienacion del texto*/
+	/*Flexbox*/
+	display: flex; /*arregla el texto de las imagenes*/
+	flex-direction: column;
+	justify-content: space-between; /*texto entre arriba y abajo*/
+	/*Grid*/
+	/*display: grid;
+	grid-template-rows: 1fr auto;/*arriba tod el espacion. abajo espaco necesario*/
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+
+	/*Flexbox*/
+    /*width: 30%;*/
+	display: flex; /*arregla el texto de las imagenes*/
+	flex-direction: column;
+	justify-content: space-between;/*texto entre arriba y abajo*/
+   /* Grid*/
+   /*display: grid;
+   grid-template-rows: auto auto auto;
+   text-align: center;*/
+
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+	.contenedor {
+		display: grid;
+		grid-template-columns: auto;
+		padding: 0.5px;  
+		
+	}	
+}
+
+@media screen and (max-width: 700px) {
+
+	.contenedor .contenedor-conciertos{
+		display: grid;
+		grid-template-columns: auto auto;
+		padding: 0.5px;  
+		
+	}	
+}
+
+@media screen and (max-width: 600px) {
+	.contenedor .contenedor-conciertos{
+		display: grid;
+	    grid-template-columns: auto;
+		padding: 0px;
+		
+	}	
+}
